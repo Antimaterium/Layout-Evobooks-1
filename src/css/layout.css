@@ -1,0 +1,21 @@
+#footer {
+  margin-top: 30px;
+  height: 100px;
+  background-color: #eee;
+  padding-top: 35px;
+  text-align: center;
+}
+
+#footer p {
+  padding-top: 5px; 
+}
+
+.linkPreto {
+  color: black;
+  text-decoration: none;
+}
+
+#loginIcon{
+  background-image: url("../icons/ic_people_black_36px.svg");
+  width: 30px;
+}

@@ -11,7 +11,7 @@ import ViewImage from './components/ViewImage';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 injectTapEventPlugin();
-
+//Tá renderizanu aqui
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={Layout}>

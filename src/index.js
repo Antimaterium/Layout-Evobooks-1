@@ -19,6 +19,7 @@ ReactDOM.render(
       <Route path="cadastroimagem" component={CadastroImagem}/>
       <Route path="visualizador" component={ViewImage}/>
       <Route path="libs" component={Bibliotecas}/>
+      <Route path="edit" component={Editor}/>
     </Route>
   </Router>,
   document.getElementById('root')

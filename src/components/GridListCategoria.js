@@ -7,36 +7,40 @@ import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 const styles = {
   root: {
     display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
   },
   gridList: {
     display: 'flex',
+    justifyContent: "center",
     flexWrap: 'nowrap',
     overflowX: 'auto',
   },
 };
 
 const tilesData = [
-  {
-    img: 'images/grid-list/00-52-29-429_640.jpg',
+   {
+    img: require('../img/3d.jpg'),
     title: 'Breakfast',
     author: 'jill111',
   },
   {
-    img: 'images/grid-list/burger-827309_640.jpg',
+    img: require('../img/cubos-pretos-azuis-wallpaper.jpg'),
     title: 'Tasty burger',
     author: 'pashminu',
   },
   {
-    img: 'images/grid-list/camera-813814_640.jpg',
+    img: require('../img/dori.jpg'),
     title: 'Camera',
     author: 'Danson67',
   },
   {
-    img: 'images/grid-list/morning-819362_640.jpg',
-    title: 'Morning',
-    author: 'fancycrave1',
+    img: require('../img/cubos-pretos-azuis-wallpaper.jpg'),
+    title: 'Tasty burger',
+    author: 'pashminu',
+  },
+  {
+    img: require('../img/dori.jpg'),
+    title: 'Camera',
+    author: 'Danson67',
   },
 ];
 
@@ -45,24 +49,22 @@ class GridListCategoria extends Component {
 
   render() {
     return (
-        <MuiThemeProvider>
-            <div style={styles.root}>
-              <GridList style={styles.gridList} 
-                        cols={4} 
-                        padding={0}
-                        cellHeight={300}>
-                {tilesData.map((tile) => (
-                  <GridTile
-                    key={tile.img}
-                    title={tile.title}
-                    actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-                  >
-                    <img src={tile.img} />
-                  </GridTile>
-                ))}
-              </GridList>
-            </div>
-        </MuiThemeProvider>
+        <div style={styles.root}>
+          <GridList style={styles.gridList} 
+                    cols={4} 
+                    padding={10}
+                    cellHeight={150}>
+            {tilesData.map((tile) => (
+              <GridTile
+                key={tile.img}
+                title={tile.title}
+                actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+              >
+                <img src={tile.img} />
+              </GridTile>
+            ))}
+          </GridList>
+        </div>
     );
   }
 }

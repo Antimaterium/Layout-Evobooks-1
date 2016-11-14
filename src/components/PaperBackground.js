@@ -19,23 +19,10 @@ const PaperBackground = () => (
     <div>
       <Paper 
         style={style} 
-        zDepth={2} 
+        zDepth={1} 
         children={
           <div>
-            <p className="textoCategoria">Biologia</p>
-            <GridListCategoria/>
 
-            <p className="textoCategoria">Quimica</p>
-            <GridListCategoria/>
-
-            <p className="textoCategoria">Animais</p>
-            <GridListCategoria/>
-
-            <p className="textoCategoria">Frutas</p>
-            <GridListCategoria/>
-
-            <p className="textoCategoria">Carros</p>
-            <GridListCategoria/>
           </div>
         }
       />

@@ -58,9 +58,7 @@ class ModalLogin extends React.Component {
           open={this.state.open}
           style={styleModal}
         >
-          {array}
-
-          {content}
+          '
           <RaisedButton label="CADASTRE-SE" onTouchTap={this.togglePageRegister.bind(this)} />
         </Dialog>
       </div>

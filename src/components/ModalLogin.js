@@ -7,7 +7,6 @@ import FormLogin from './FormLogin';
 
  const styleModal = {
     width: '400px',
-    //left: 'calc (50% - 200px)'
     marginLeft: 'calc(50% - 200px)',
     fontSize: '10px'
   }
@@ -50,7 +49,7 @@ class ModalLogin extends React.Component {
 
     return (
       <div>
-        <RaisedButton label="Login" onTouchTap={this.handleOpen} />
+        <FlatButton label="Login" onTouchTap={this.handleOpen} />
         <Dialog
           title="Login"
           actions={actions}
@@ -58,7 +57,7 @@ class ModalLogin extends React.Component {
           open={this.state.open}
           style={styleModal}
         >
-          '
+          <FormLogin/>
           <RaisedButton label="CADASTRE-SE" onTouchTap={this.togglePageRegister.bind(this)} />
         </Dialog>
       </div>

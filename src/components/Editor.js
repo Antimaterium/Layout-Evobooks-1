@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import { Container, Row, Col, Visible, Hidden } from 'react-grid-system';
+import React, { Component} from 'react';
+import { Row, Col} from 'react-grid-system';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import Lista from './Lista';

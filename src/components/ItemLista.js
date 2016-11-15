@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import Checkbox from 'material-ui/Checkbox';
-import '../css/ItemLista.css';
 
 class ItemLista extends Component{
 	render() {

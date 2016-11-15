@@ -1,7 +1,5 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import GridListCategoria from './GridListCategoria';
 
 
 const style = {
@@ -15,21 +13,18 @@ const style = {
 };
 
 const PaperBackground = () => (
-  <MuiThemeProvider>
     <div>
       <Paper 
         style={style} 
         zDepth={1} 
         children={
           <div>
-
           </div>
         }
       />
 
       
     </div>
-  </MuiThemeProvider>
 );
 
 export default PaperBackground ;

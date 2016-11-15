@@ -35,8 +35,7 @@ class Layout extends Component {
                 <li style={listaMenuli}> <FlatButton label="HOME" /> </li>
                 <li style={listaMenuli}> <FlatButton label="EDITAR" /> </li>
                 <li style={listaMenuli}> <FlatButton label="SOBRE" /> </li>
-                <li style={listaMenuli}> <FlatButton label="CONTATO" /> </li>              
-                <li style={listaMenuli}> <ModalLogin/> </li> 
+                <li style={listaMenuli}> <FlatButton label="CONTATO" /> </li>     
               </ul>
             )}
             showMenuIconButton={false}

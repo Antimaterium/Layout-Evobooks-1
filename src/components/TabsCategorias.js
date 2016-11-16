@@ -46,6 +46,7 @@ class TabsCategorias extends Component {
           <Tab label="Arquitetura" value={6} />
           <Tab label="Móveis" value={7} />
           <Tab label="Automóveis" value={8} />
+          <Tab label="Tecnologia" value={8} />
         </Tabs>
         <SwipeableViews
           index={this.state.slideIndex}

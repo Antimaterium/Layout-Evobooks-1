@@ -8,27 +8,30 @@ class App extends Component {
 
     const styles = {
       video: {
-        zIndex: '1',
-        width: '100%',
-        MaxHeight: '500px'
+        zIndex: '0', 
+        minWidth: '100%', 
+        minHeight: '100%'
       },
       boxVideo: {
-        zIndex: '0',
-        MaxHeight: '500px',
-        background: 'red',
-        display: 'flex',
-        justifyContent: 'flex-end',
-        alignItems: 'center'
+        zIndex: '1',
+        top: '-50px', 
+        left: '0px', 
+        width: '100%', 
+        opacity: '1', 
+        overflow: 'hidden', 
+        height: '550px',
+        borderBottom: 'solid #26C6DA'
       }
     }
 
     return (  
       <div>
         <div style={styles.boxVideo}>
-          <video preload="auto" autoPlay="autoPlay" loop="loop" style={{width: '100%', display: 'block'}}>
-            <source src={require("../video/teaser.mp4")} type="video/mp4"/>
+          <video style={styles.video} loop="loop" autoPlay="autoplay">
+            <source src={require("../video/teaser.webm")}/>
           </video>
         </div>
+
         <h2 className="categorias">Categorias</h2>
         
         <PaperBackground/>

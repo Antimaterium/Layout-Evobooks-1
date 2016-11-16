@@ -1,6 +1,6 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
-
+import TabsCategorias from './TabsCategorias'
 
 const style = {
   height: '100%',
@@ -19,6 +19,7 @@ const PaperBackground = () => (
         zDepth={1} 
         children={
           <div>
+            <TabsCategorias/>
           </div>
         }
       />

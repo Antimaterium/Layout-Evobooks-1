@@ -5,20 +5,22 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ModalLogin from '../components/ModalLogin';
 import '../css/layout.css'
 
-const listaMenu = {
+const styles = {
+  appBar: {
+    position: 'fixed',
+    margin: '-3px 0px -3px 0px' 
+  },
+  listaMenu:{
     listStyleType: 'none',
-    paddingBottom: "5px"
-};
-
-const listaMenuli = {
-  display:'inline',
-};
-
-const titulo = {
-  paddingTop: '10px',
-  fontSize: '30px',
+  },
+  listaMenuli : {
+      display:'inline',
+  },
+  titulo: {
+    paddingTop: '5px',
+    fontSize: '30px'
+  }
 }
-
 
 class Layout extends Component {
 
@@ -28,14 +30,16 @@ class Layout extends Component {
 		  <MuiThemeProvider>
         <div>
           <AppBar
-            title="Evobooks"
-            titleStyle={titulo}
+            style={styles.appBar}
+            title="EvoLearn"
+            titleStyle={styles.titulo}
             iconElementRight={(
-              <ul style={listaMenu}> 
-                <li style={listaMenuli}> <FlatButton label="HOME" /> </li>
-                <li style={listaMenuli}> <FlatButton label="EDITAR" /> </li>
-                <li style={listaMenuli}> <FlatButton label="SOBRE" /> </li>
-                <li style={listaMenuli}> <FlatButton label="CONTATO" /> </li>     
+              <ul style={styles.listaMenu}> 
+                <li style={styles.listaMenuli}> <FlatButton label="HOME" /> </li>
+                <li style={styles.listaMenuli}> <FlatButton label="EDITAR" /> </li>
+                <li style={styles.listaMenuli}> <FlatButton label="SOBRE" /> </li>
+                <li style={styles.listaMenuli}> <FlatButton label="CONTATO" /> </li>
+                <li style={styles.listaMenuli}> <FlatButton label="CONTATO" /> </li>     
               </ul>
             )}
             showMenuIconButton={false}

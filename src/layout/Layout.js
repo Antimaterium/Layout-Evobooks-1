@@ -8,7 +8,7 @@ import '../css/layout.css'
 const styles = {
   appBar: {
     position: 'fixed',
-    margin: '-3px 0px -3px 0px' 
+    margin: '-3px 0px -3px 0px'
   },
   listaMenu:{
     listStyleType: 'none',
@@ -17,7 +17,7 @@ const styles = {
       display:'inline',
   },
   titulo: {
-    paddingTop: '5px',
+    paddingTop: '8px',
     fontSize: '30px'
   }
 }
@@ -36,10 +36,9 @@ class Layout extends Component {
             iconElementRight={(
               <ul style={styles.listaMenu}> 
                 <li style={styles.listaMenuli}> <FlatButton label="HOME" /> </li>
-                <li style={styles.listaMenuli}> <FlatButton label="EDITAR" /> </li>
                 <li style={styles.listaMenuli}> <FlatButton label="SOBRE" /> </li>
                 <li style={styles.listaMenuli}> <FlatButton label="CONTATO" /> </li>
-                <li style={styles.listaMenuli}> <FlatButton label="CONTATO" /> </li>     
+                <li style={styles.listaMenuli}> <FlatButton label="LOGIN" /> </li>
               </ul>
             )}
             showMenuIconButton={false}

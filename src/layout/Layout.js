@@ -26,7 +26,7 @@ const styles = {
     marginTop: '10px'
   },
   container: {
-    minHeight: '700px'
+    minHeight: '500px'
   }
 }
 

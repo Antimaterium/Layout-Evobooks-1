@@ -28,7 +28,7 @@ class InputImage extends Component{
       				containerElement="label"
     >
       <input type="file" style={styles.exampleImageInput} />
-    </RaisedButton>
+      </RaisedButton>
 			</div>
 			);
 	}

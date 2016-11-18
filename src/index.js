@@ -19,7 +19,6 @@ ReactDOM.render(
     <Route path="/" component={Layout}>
       <IndexRoute component={App}/>
       <Route path="imageRegister" component={CadastroImagem}/>
-      <Route path="view" component={ViewImage}/>
       <Route path="libs" component={Bibliotecas}/>
       <Route path="edit" component={Editor}/>
       <Route path="profile" component={Profile}/>

@@ -29,7 +29,8 @@ class App extends Component {
         left: '0',
         position: 'absolute',
         top: '0',
-        width: '101%'
+        width: '101%',
+        zIndex: '10'
       }
     }
 

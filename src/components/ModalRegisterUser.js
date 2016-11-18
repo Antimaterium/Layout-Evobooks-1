@@ -2,20 +2,20 @@ import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
-import FormLogin from './FormLogin';
+import FormRegister from './FormRegister';
 
 
  const styleModal = {
-    width: '400px',
+    width: '500px',
     //left: 'calc (50% - 200px)'
-    marginLeft: 'calc(50% - 200px)',
+    marginLeft: 'calc(50% - 250px)',
     fontSize: '10px'
   }
 
 class ModalRegisterUser extends React.Component {
   state = {
     open: false,
-    pagCadastro: false
+    pageCadastro: false
   };
 
   handleOpen = () => {
@@ -26,10 +26,10 @@ class ModalRegisterUser extends React.Component {
     this.setState({open: false});
   };
 
-  togglePagCadastro(){
+  togglePageCadastro(){
     
     this.setState({
-      pagCadastro: !this.state.pagCadastro
+      pageCadastro: !this.state.pageCadastro
     });
   }
 
@@ -41,31 +41,28 @@ class ModalRegisterUser extends React.Component {
         onTouchTap={this.handleClose}
       />,
       <FlatButton
-        label="Entrar"
+        label="Cadastrar"
         primary={true}
-        onTouchTap={this.togglePagCadastro.bind(this)}
+        onTouchTap={this.togglePageCadastro.bind(this)}
       />,
     ];
 
 
     return (
       <div>
-        <RaisedButton label="Login" onTouchTap={this.handleOpen} />
+        <FlatButton label="CADASTRE-SE" onTouchTap={this.handleOpen} />
         <Dialog
-          title="Login"
+          title="CADASTRE-SE"
           actions={actions}
           modal={true}
           open={this.state.open}
           style={styleModal}
         >
-          {array}
-
-          {content}
-          <RaisedButton label="CADASTRE-SE" onTouchTap={this.togglePagCadastro.bind(this)} />
+          <FormRegister/>
         </Dialog>
       </div>
     );
   }
 }
 
-export default ModalLogin;
+export default ModalRegisterUser;

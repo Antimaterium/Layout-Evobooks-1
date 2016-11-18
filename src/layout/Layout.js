@@ -17,8 +17,16 @@ const styles = {
       display:'inline',
   },
   titulo: {
-    paddingTop: '8px',
+    marginTop: '3px',
     fontSize: '30px'
+  },
+  containerList: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginTop: '10px'
+  },
+  container: {
+    minHeight: '700px'
   }
 }
 
@@ -28,18 +36,18 @@ class Layout extends Component {
     return (
       
 		  <MuiThemeProvider>
-        <div>
+        <div style={styles.container}>
           <AppBar
             style={styles.appBar}
             title="EvoLearn"
             titleStyle={styles.titulo}
             iconElementRight={(
-              <ul style={styles.listaMenu}> 
-                <li style={styles.listaMenuli}> <FlatButton label="HOME" /> </li>
-                <li style={styles.listaMenuli}> <FlatButton label="SOBRE" /> </li>
-                <li style={styles.listaMenuli}> <FlatButton label="CONTATO" /> </li>
-                <li style={styles.listaMenuli}> <FlatButton label="LOGIN" /> </li>
-              </ul>
+              <div style={styles.containerList}>
+                <FlatButton label="HOME" /> 
+                <FlatButton label="SOBRE" /> 
+                <FlatButton label="CONTATO" /> 
+                <ModalLogin/>
+              </div>
             )}
             showMenuIconButton={false}
           />

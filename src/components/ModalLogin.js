@@ -49,9 +49,9 @@ class ModalLogin extends React.Component {
 
     return (
       <div>
-        <FlatButton label="Login" onTouchTap={this.handleOpen} />
+        <FlatButton label="LOGIN" onTouchTap={this.handleOpen} />
         <Dialog
-          title="Login"
+          title="LOGIN"
           actions={actions}
           modal={true}
           open={this.state.open}

@@ -8,7 +8,8 @@ import '../css/layout.css'
 const styles = {
   appBar: {
     position: 'fixed',
-    margin: '-3px 0px -3px 0px'
+    top: 0,
+    left: 0,
   },
   listaMenu:{
     listStyleType: 'none',
@@ -31,8 +32,17 @@ const styles = {
 }
 
 class Layout extends Component {
+  constructor(props){
+    super(props);
 
+    // Evento ao rolar o scroll na página
+    window.onscroll=(ev)=>{
+      console.log(ev);
+    }
+
+  }
   render() {
+    
     return (
       
 		  <MuiThemeProvider>

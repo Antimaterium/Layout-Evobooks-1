@@ -1,0 +1,13 @@
+
+#banner h1{
+    font-size: 5.5vw;
+    font-weight: normal;
+    margin: 0px;
+}
+
+@media(max-width: 800px){
+    #banner h1{
+        font-size: 5.5vw;
+        font-weight: normal;
+    }
+}

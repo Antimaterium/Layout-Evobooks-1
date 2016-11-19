@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import PaperBackground from './PaperBackground';
 import '../css/App.css';
 import Background from '../img/branco-opacity.png';
+import FlatButton from 'material-ui/FlatButton';
+import FontIcon from 'material-ui/FontIcon';
+import SearchSubmit from 'material-ui/svg-icons/action/search';
+import {fullWhite} from 'material-ui/styles/colors';
 
 class App extends Component {
 
@@ -31,13 +35,27 @@ class App extends Component {
         top: '0',
         width: '101%',
         zIndex: '10'
+      },
+      searchSubmit: {
+        margin: 12,
       }
     }
 
     return (  
       <div>
-        <div style={styles.container}></div>
+        <div>
+          <h1>Bla bla bla bla wiskas sache</h1>
+          <input type="search" name="searchField" placeholder="Digite algo. Ex: Célula"/>
+          <FlatButton
+            backgroundColor="#a4c639"
+            hoverColor="#8AA62F"
+            icon={<SearchSubmit color={fullWhite} />}
+            style={styles.searchSubmit}
+          />
+        </div>
+          
         <div style={styles.boxVideo}>
+          <div style={styles.container}></div>
           <video style={styles.video} loop="loop" autoPlay="autoplay">
             <source src={require("../video/teaser.webm")}/>
           </video>

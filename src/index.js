@@ -9,7 +9,6 @@ import Editor from './components/Editor';
 import Bibliotecas from './components/Bibliotecas';
 import Profile from './components/Profile';
 import TabsProfile from './components/TabsProfile';
-import ViewImage from './components/ViewImage';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 injectTapEventPlugin();

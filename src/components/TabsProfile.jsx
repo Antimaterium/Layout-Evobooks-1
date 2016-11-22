@@ -105,9 +105,6 @@ class TabsProfile extends Component {
             }
         };
 
-
-
-
         return (
             <div>
                 <Tabs
@@ -139,9 +136,6 @@ class TabsProfile extends Component {
                                         floatingLabelFixed={true}
                                         />
                                 </div>
-
-
-
 
                                 <TextField
                                     id="text-field-default"

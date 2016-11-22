@@ -2,32 +2,42 @@ import React, {Component} from 'react';
 import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import ModalLogin from '../components/ModalLogin';
 import '../css/layout.css'
+
+const muiTheme = getMuiTheme({
+  palette: {
+    background: '#FFFFFF',
+  },
+  appBar: {
+    height: 50,
+  },
+});
 
 const styles = {
   appBar: {
     position: 'fixed',
     top: 0,
     left: 0,
-  },
-  listaMenu:{
-    listStyleType: 'none',
-  },
-  listaMenuli : {
-      display:'inline',
+    background: 'rgba(0,0,0,0)',
+    boxShadow: 'rgba(0,0,0,0)'
   },
   titulo: {
     marginTop: '3px',
-    fontSize: '30px'
+    fontSize: '35px',
   },
   containerList: {
     display: 'flex',
     flexDirection: 'row',
     marginTop: '10px'
   },
+  menuButtons: {
+    color: '#FAFAFA',
+    fontWeight: 'bold'
+  },
   container: {
-    minHeight: '500px'
+    minHeight: '500px',
   }
 }
 
@@ -45,7 +55,7 @@ class Layout extends Component {
     
     return (
       
-		  <MuiThemeProvider>
+		  <MuiThemeProvider muiTheme={muiTheme}>
         <div style={styles.container}>
           <AppBar
             style={styles.appBar}
@@ -53,9 +63,9 @@ class Layout extends Component {
             titleStyle={styles.titulo}
             iconElementRight={(
               <div style={styles.containerList}>
-                <FlatButton label="HOME" /> 
-                <FlatButton label="SOBRE" /> 
-                <FlatButton label="CONTATO" /> 
+                <FlatButton style={styles.menuButtons} label="HOME" /> 
+                <FlatButton style={styles.menuButtons} label="SOBRE" /> 
+                <FlatButton style={styles.menuButtons} label="CONTATO" /> 
                 <ModalLogin/>
               </div>
             )}
@@ -66,7 +76,7 @@ class Layout extends Component {
 
           <footer id="footer">
             <div>
-              <p id="textoRodape" style={{fontFamily: 'Roboto' }}>Evobooks - <a className="linkPreto" href="http://evobooks.com.br/cases/">http://evobooks.com.br/cases/</a></p>
+              <p className="linkCinza">Evobooks - <a className="linkCinza" href="http://evobooks.com.br/cases/">http://evobooks.com.br/cases/</a></p>
             </div>
           </footer>
         </div>  

@@ -3,7 +3,6 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-import ImageCards from './ImageCards'
 
 const styles = {
   root: {
@@ -104,7 +103,7 @@ const GridListCategoria = () => (
       style={styles.gridList}
       cols={4}
     >
-      <Subheader>Descrição...</Subheader>
+      
       {tilesData.map((tile) => (
         <GridTile
           key={tile.img}

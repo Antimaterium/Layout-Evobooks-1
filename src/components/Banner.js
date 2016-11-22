@@ -31,6 +31,7 @@ class Banner extends Component {
 				alignItems: "center",
 				flexDirection: "column",
                 fontFamily: "Oswald",
+				fontWeigth: 'normal',
                 color: "white",
                 textAlign: 'center'
 			},
@@ -43,8 +44,14 @@ class Banner extends Component {
 				overflow: "hidden"
 			},
 			searchSubmit: {
-				margin: 12,
+				margin: 12
 			},
+			serchField: {
+				height: '36px',
+				width: '250px',
+				border: 'none',
+				borderRadius: '2',
+			}
 		}
 
 		return (
@@ -58,7 +65,7 @@ class Banner extends Component {
                     </p>
 
                     <div>
-                        <input type="search" name="searchField" placeholder="Digite algo. Ex: Célula" />
+                        <input style={styles.serchField} type="search" name="searchField" placeholder=" Digite algo. Ex: Célula" />
                         <FlatButton
                             backgroundColor="#a4c639"
                             hoverColor="#8AA62F"

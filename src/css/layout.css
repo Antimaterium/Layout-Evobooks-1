@@ -1,7 +1,7 @@
 #footer {
   margin-top: 50px;
   height: 100px;
-  background-color: #eee;
+	background: rgb(117, 46, 116);
   padding-top: 35px;
   text-align: center;
 }
@@ -10,12 +10,7 @@
   padding-top: 5px; 
 }
 
-.linkPreto {
-  color: black;
+.linkCinza {
+  color: rgb(206, 206, 206);
   text-decoration: none;
-}
-
-#loginIcon{
-  background-image: url("../icons/ic_people_black_36px.svg");
-  width: 30px;
 }

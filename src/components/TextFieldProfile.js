@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
-import RadioOptionsForm from './RadioOptionsForm';
 import ChipInput from 'material-ui-chip-input';
-import ChipArray from './ChipArray';
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import './Profile.css';
-
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
-import ActionFavorite from 'material-ui/svg-icons/action/favorite';
-import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
 
 
 

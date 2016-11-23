@@ -71,9 +71,9 @@ class Layout extends Component {
             )}
             showMenuIconButton={false}
           />
-
-          {this.props.children}
-
+          <div id="container">
+            {this.props.children}
+          </div>
           <footer id="footer">
             <div>
               <p className="linkCinza">Evobooks - <a className="linkCinza" href="http://evobooks.com.br/cases/">http://evobooks.com.br/cases/</a></p>

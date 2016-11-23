@@ -32,6 +32,7 @@ class IconsDescription extends Component {
 
 	render() {
 		return (
+            
             <div>
                 <div style={styles.containerIcons}>
                     <div >

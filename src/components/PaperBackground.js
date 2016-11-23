@@ -16,7 +16,7 @@ const PaperBackground = () => (
     <div>
       <Paper 
         style={style} 
-        zDepth={1} 
+        zDepth={2} 
         children={
           <div>
             <TabsCategorias/>

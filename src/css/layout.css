@@ -1,3 +1,7 @@
+#container {
+  min-height: 765px;  
+}
+
 #footer {
   margin-top: 50px;
   height: 100px;

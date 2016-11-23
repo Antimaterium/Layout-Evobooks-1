@@ -4,6 +4,9 @@ import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+
 const styles = {
   root: {
     display: 'flex',
@@ -15,6 +18,9 @@ const styles = {
     height: '100%',
     overflowY: 'hidden',
   },
+  imagens: {
+    height: '300px'
+  }
 };
 
 const tilesData = [
@@ -93,26 +99,58 @@ const tilesData = [
     title: 'Water plant',
     author: 'BkrmadtyaKarki',
   },
+  {
+    img: require('../img/itarare.jpg'),
+    title: 'Water plant',
+    author: 'BkrmadtyaKarki',
+  },
+  {
+    img: require('../img/itarare.jpg'),
+    title: 'Water plant',
+    author: 'BkrmadtyaKarki',
+  },
+  {
+    img: require('../img/itarare.jpg'),
+    title: 'Water plant',
+    author: 'BkrmadtyaKarki',
+  },
+  {
+    img: require('../img/itarare.jpg'),
+    title: 'Water plant',
+    author: 'BkrmadtyaKarki',
+  },
+  {
+    img: require('../img/itarare.jpg'),
+    title: 'Water plant',
+    author: 'BkrmadtyaKarki',
+  },
 ];
 
 const GridListCategoria = () => (
   <div style={styles.root}>
     <GridList
-      padding={20}
-      cellHeight={220}
+      padding={10}
+      cellHeight={475}
       style={styles.gridList}
       cols={4}
     >
       
       {tilesData.map((tile) => (
-        <GridTile
-          key={tile.img}
-          title={tile.title}
-          subtitle={<span>by <b>{tile.author}</b></span>}
-          actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-        >
-          <img src={tile.img} />
-        </GridTile>
+          <Card>
+            <CardMedia
+              overlay={<CardTitle title={tile.title} />}
+            >
+              <img src= {tile.img} style={styles.imagens} />
+            </CardMedia>
+            <CardTitle title="Titulo Da Descrição" />
+            <CardText>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </CardText>
+            <CardActions>
+              <FlatButton label="Editar" />
+              <FlatButton label="Salvar" />
+            </CardActions>
+        </Card>
       ))}
     </GridList>
   </div>

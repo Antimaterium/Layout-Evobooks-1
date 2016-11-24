@@ -21,6 +21,9 @@ import FormLogin from './FormLogin';
       minWidth: '88px',
       position: 'relative',
       overflow: 'hidden'
+    },
+    button: {
+      color: '#FFF'
     }
   }
 
@@ -62,7 +65,12 @@ class ModalLogin extends React.Component {
 
     return (
       <div>
-        <PersonIcon style={styles.icon} label="LOGIN" onTouchTap={this.handleOpen} color={'#FFFFFF'}/>
+        <FlatButton 
+          icon={<PersonIcon/>} label="Entrar"
+          labelPosition="before"
+          style={styles.button}
+          onTouchTap={this.handleOpen} 
+        />
         <Dialog
           title="LOGIN"
           actions={actions}

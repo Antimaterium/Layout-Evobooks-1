@@ -16,9 +16,8 @@ const style = {
 class CadastroImagem extends Component {
     
  render() {
-      return(
-        <div className="container">      
-            <div>
+      return( 
+        <div>
             <Paper 
                 style={style} 
                 zDepth={1} 
@@ -28,9 +27,6 @@ class CadastroImagem extends Component {
                 </div>
                 }
             />
-
-            
-            </div>
         </div>
      );
  }

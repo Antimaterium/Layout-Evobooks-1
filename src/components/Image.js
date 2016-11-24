@@ -6,7 +6,7 @@ class Image extends Component{
 	render(){
 		return (
           <div className="image"> 
-			<img src="" /> 
+			<img src="../img/dori.jpg" /> 
 		</div> 	
 		);          
 	}

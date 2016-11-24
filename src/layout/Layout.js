@@ -4,6 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import ModalLogin from '../components/ModalLogin';
+import ModalRegisterUser from '../components/ModalRegisterUser'
 import '../css/layout.css'
 
 const muiTheme = getMuiTheme({
@@ -20,7 +21,7 @@ const styles = {
     position: 'fixed',
     top: 0,
     left: 0,
-    background: 'rgba(0,0,0,0)',
+    background: '#3B3B3B',
     boxShadow: 'rgba(0,0,0,0)'
   },
   titulo: {
@@ -63,17 +64,17 @@ class Layout extends Component {
             titleStyle={styles.titulo}
             iconElementRight={(
               <div style={styles.containerList}>
-                <FlatButton style={styles.menuButtons} label="HOME" /> 
-                <FlatButton style={styles.menuButtons} label="SOBRE" /> 
-                <FlatButton style={styles.menuButtons} label="CONTATO" /> 
                 <ModalLogin/>
+                <ModalRegisterUser/>
               </div>
             )}
             showMenuIconButton={false}
           />
+          
           <div id="container">
             {this.props.children}
           </div>
+
           <footer id="footer">
             <div>
               <p className="linkCinza">Evobooks - <a className="linkCinza" href="http://evobooks.com.br/cases/">http://evobooks.com.br/cases/</a></p>

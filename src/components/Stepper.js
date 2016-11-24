@@ -43,7 +43,7 @@ class HorizontalLinearStepper extends React.Component {
         );
       case 1:
         return(
-        <Editor/>   
+            <Editor/>   
         );
       case 2:
         return (

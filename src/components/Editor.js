@@ -25,7 +25,7 @@ class Editor extends Component{
 	</Row> 
 	<Row> 
 		<Col  md={8} >
-		    <h3> Tags </h3>: 
+		    <h3> Tags :</h3>
              <Chips/>
  		</Col>
 		<Col  md={4} >
@@ -35,10 +35,10 @@ class Editor extends Component{
 
 	<Row>
 	   <Col md={12} >
-	    	    <RaisedButton
-      				label="Verificar alterações "
-      				labelPosition="before"
-     				primary={true}
+			<RaisedButton
+				label="Verificar alterações "
+				labelPosition="before"
+				primary={true}
         />  
 	   </Col> 
 	</Row> 

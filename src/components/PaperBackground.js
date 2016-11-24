@@ -5,8 +5,7 @@ import TabsCategorias from './TabsCategorias'
 const style = {
   height: '100%',
   width: '97%',
-  margin: 20,
-  paddingBottom: 50,
+  margin: '1%',
   textAlign: 'center',
   display: 'inline-block',
   backgroundColor: '#FAFAFA',

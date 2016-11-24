@@ -19,7 +19,7 @@ const styles = {
     overflowY: 'hidden',
   },
   imagens: {
-    height: '300px'
+    height: '200px'
   }
 };
 
@@ -130,7 +130,7 @@ const GridListCategoria = () => (
   <div style={styles.root}>
     <GridList
       padding={10}
-      cellHeight={475}
+      cellHeight={320}
       style={styles.gridList}
       cols={4}
     >
@@ -142,7 +142,6 @@ const GridListCategoria = () => (
             >
               <img src= {tile.img} style={styles.imagens} />
             </CardMedia>
-            <CardTitle title="Titulo Da Descrição" />
             <CardText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </CardText>

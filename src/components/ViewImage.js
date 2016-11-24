@@ -4,48 +4,35 @@ import Paper from 'material-ui/Paper';
 import Image from './Image';
 import '../css/Editor.css';
 
-const style = {
-  height: '100%',
-  width: '97%',
-  margin: 20,
-  marginTop: '100px',
-  paddingBottom: 50,
-  textAlign: 'center',
-  display: 'inline-block',
-  backgroundColor: '#FAFAFA',
-};
+const styles = {
+	container: {
+		display: 'flex',
+		justifyContent: 'center',
+		flexDirection: 'column'
+	}
+}
 
 class ViewImage extends Component{
 	render() {
 		return (
-
-			<Paper 
-				style={style} 
-				zDepth={1} 
-				children={
-					<div className="main">		
-						<Row>
-							<Col md={12} >
-								<Row> 
-									<Col md={8} style={{ border: '1px solid silver', margin: '30px' }}>
-										<div className="containerImage"> 
-											<Image/>
-										</div>
-									</Col>
-									<Col md={4} >
-										<div> 
-											<h3> Deseja manter as alterações no modelo e salvar ? </h3> 
-										</div> 
-									</Col>
-								</Row> 
-							</Col>	
-						</Row>
-					</div>
-				}
-			/>
-
-    );
-}
+			<Row>
+				<Col md={12} >
+					<Row style={styles.container}> 
+						<Col md={12} style={{ border: '1px solid silver' }}>
+							<div className="containerImage"> 
+								<Image/>
+							</div>
+						</Col>
+						<Col md={12} >
+							<div> 
+								<h3> Deseja manter as alterações no modelo e salvar ? </h3> 
+							</div> 
+						</Col>
+					</Row> 
+				</Col>	
+			</Row>	
+    	);
+	}
 }
 
 

@@ -6,12 +6,19 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-
-import Editor from './Editor';
+import StepperEditor from './StepperEditor';
 import InputImage from './InputImage';
 import ViewImage from './ViewImage';
 import '../css/Stepper.css';
 
+const style = {
+  height: '100%',
+  width: '97%',
+  margin: '1%',
+  textAlign: 'center',
+  display: 'inline-block',
+  backgroundColor: '#FAFAFA',
+};
 
 class HorizontalLinearStepper extends React.Component {
 
@@ -43,7 +50,7 @@ class HorizontalLinearStepper extends React.Component {
         );
       case 1:
         return(
-            <Editor/>   
+            <StepperEditor/>   
         );
       case 2:
         return (

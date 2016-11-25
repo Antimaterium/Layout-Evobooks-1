@@ -22,8 +22,6 @@ const PaperBackground = () => (
           </div>
         }
       />
-
-      
     </div>
 );
 

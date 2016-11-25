@@ -38,7 +38,6 @@ const styles = {
     fontWeight: 'bold'
   },
   container: {
-    minHeight: '500px',
   }
 }
 

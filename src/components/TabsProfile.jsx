@@ -12,6 +12,7 @@ import Paper from 'material-ui/Paper';
 import PasswordField from 'material-ui-password-field';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import './Profile.css';
+import {request} from "../utils/Request";
 
 const styles = {
     headline: {
@@ -29,6 +30,40 @@ class TabsProfile extends Component {
     state = {
         tags: [],
     }
+
+    logar(){
+        // fetch("http://localhost/login",{
+        //     method:"GET",
+        //     headers:{
+        //         "Authorization": "Bearer "+token,
+        //         "Content-Type": "application/json"
+        //     },
+        //     body: "{nome: 'jwqkljdkasljlas', senha: 'jdsaskdjalsdjkl'}"
+        // })
+        // .then(res=>{
+        //     res.json();
+
+        // })
+
+        request("login","POST",{nome: "usuario"})
+        .then(res=>res.json())
+        .then(json=>{
+            this.setState({
+                token: json.token
+            });
+        });
+
+
+        request("usuario")
+        .then(res=>res.json())
+        .then(json=>{
+            this.setState({
+                usuarios: json.usuarios
+            });
+        });
+    }
+
+    
 
     constructor() {
         super();

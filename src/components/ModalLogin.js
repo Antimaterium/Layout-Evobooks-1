@@ -4,6 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import PersonIcon from 'material-ui/svg-icons/social/person';
 import FormLogin from './FormLogin';
+import {request} from '../utils/Request';
 
 
  const styles = {
@@ -46,7 +47,19 @@ class ModalLogin extends React.Component {
     this.setState({
       pageRegister: !this.state.pageRegister
     });
+
+     var dados = this.refs.formLogin.state;
+
+
+     request("Account/Login", "POST", dados)
+      .then(response => response.json())
+      .then(response => {
+       localStorage.setItem('token', response.access_token)
+       
+      })
+
   }
+
 
   render() {
     const actions = [
@@ -78,7 +91,7 @@ class ModalLogin extends React.Component {
           open={this.state.open}
           style={styles.modal}
         >
-          <FormLogin/>
+          <FormLogin ref="formLogin" />
           <RaisedButton label="CADASTRE-SE" onTouchTap={this.togglePageRegister.bind(this)} />
         </Dialog>
       </div>

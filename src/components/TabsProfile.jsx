@@ -28,7 +28,11 @@ const styles = {
 
 class TabsProfile extends Component {
     state = {
-        tags: [],
+        tags: []
+    }
+
+    componentDidMount() {
+        
     }
 
     logar(){
@@ -63,14 +67,15 @@ class TabsProfile extends Component {
         });
     }
 
-    
-
     constructor() {
         super();
 
         //  super(props);
         this.state = {
             slideIndex: 0,
+            user: {
+                name: 'teste'
+            }
         };
 
         this.formacoesAcademicas = [
@@ -158,6 +163,7 @@ class TabsProfile extends Component {
                     >
                     <div>
                         <div style={styles.default}>
+                            {/* */}
                             <Paper zDepth={5} style={styles.default} >
                             
                                 <h2> Perfil </h2>
@@ -166,7 +172,7 @@ class TabsProfile extends Component {
                                 <div>
                                     <TextField
                                         id="text-field-default"
-                                        defaultValue="Victor Matheus"
+                                        value={this.state.user.name}
                                         floatingLabelText="Nome"
                                         floatingLabelFixed={true}
                                         />

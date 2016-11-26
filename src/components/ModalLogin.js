@@ -70,6 +70,7 @@ class ModalLogin extends React.Component {
           labelPosition="before"
           style={styles.button}
           onTouchTap={this.handleOpen} 
+          
         />
         <Dialog
           title="LOGIN"

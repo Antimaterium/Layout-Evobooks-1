@@ -49,15 +49,15 @@ class IconsDescription extends Component {
                 <div style={styles.container}>
                     <div>  
                         <h3 style={styles.textoTituloIcon}>Titulo do texto</h3>
-                        <p style={styles.textoDescricao}>Descrição bosta, xixi de onça. Coco de cavalo.Descrição bosta, xixi de onça.</p>
+                        <p style={styles.textoDescricao}>Descrição explicativa sobre o projeto.</p>
                     </div>
                     <div>
                         <h3 style={styles.textoTituloIcon}>Titulo do texto</h3>
-                        <p style={styles.textoDescricao}>Descrição bosta, xixi de onça. Coco de cavalo.Descrição bosta, xixi de onça.</p>
+                        <p style={styles.textoDescricao}>Descrição explicativa sobre o projeto.</p>
                     </div>
                     <div>
                         <h3 style={styles.textoTituloIcon}>Titulo do texto</h3>
-                        <p style={styles.textoDescricao}>Descrição bosta, xixi de onça. Coco de cavalo.Descrição bosta, xixi de onça.</p>
+                        <p style={styles.textoDescricao}>Descrição explicativa sobre o projeto.</p>
                     </div>
                 </div>
             </div>

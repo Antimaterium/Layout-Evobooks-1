@@ -4,7 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import ModalLogin from '../components/ModalLogin';
-import ModalRegisterUser from '../components/ModalRegisterUser'
+import ModalRegisterUser from '../components/ModalRegisterUser';
 import '../css/layout.css'
 
 const muiTheme = getMuiTheme({
@@ -22,16 +22,16 @@ const styles = {
     top: 0,
     left: 0,
     background: '#3B3B3B',
-    boxShadow: 'rgba(0,0,0,0)'
+    boxShadow: 'rgba(0,0,0,0)',
   },
-  titulo: {
-    marginTop: '3px',
-    fontSize: '35px',
+  logo: {
+    width: '190px'
   },
   containerList: {
     display: 'flex',
     flexDirection: 'row',
-    marginTop: '10px'
+    justifyContent:'center',   
+    marginTop: '7px'
   },
   menuButtons: {
     color: '#FAFAFA',
@@ -59,15 +59,15 @@ class Layout extends Component {
         <div style={styles.container}>
           <AppBar
             style={styles.appBar}
-            title="EvoLearn"
-            titleStyle={styles.titulo}
+            iconElementLeft={(
+                <img style={styles.logo} src={require("../img/EvoLearn-logo.png")}/>
+            )}
             iconElementRight={(
               <div style={styles.containerList}>
                 <ModalLogin/>
                 <ModalRegisterUser/>
               </div>
             )}
-            showMenuIconButton={false}
           />
           
           <div id="container">

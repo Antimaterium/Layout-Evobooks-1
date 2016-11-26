@@ -147,7 +147,6 @@ const GridListCategoria = () => (
             </CardText>
             <CardActions>
               <FlatButton label="Editar" />
-              <FlatButton label="Salvar" />
             </CardActions>
         </Card>
       ))}

@@ -12,6 +12,9 @@ import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 class TextFieldProfile extends Component {
   state = {
     tags: [],
+    user: {
+      name: 'teste'
+    }
   }
 
   constructor(){
@@ -35,6 +38,10 @@ class TextFieldProfile extends Component {
       }
     ];
 
+  }
+
+  componentDidMount() {
+    
   }
 
   handleAddChip(chip) {
@@ -84,7 +91,7 @@ class TextFieldProfile extends Component {
           <div>
             <TextField
               id="text-field-default"
-              defaultValue="Victor Matheus"
+              value={this.state.user.name}
               floatingLabelText="Nome"
               floatingLabelFixed={true}
               />

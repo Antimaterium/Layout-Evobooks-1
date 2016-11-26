@@ -4,6 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import PersonIconAdd from 'material-ui/svg-icons/social/person-add';
 import FormRegister from './FormRegister';
+import {request} from '../utils/Request';
 
 
  const styles = {
@@ -43,7 +44,27 @@ class ModalRegisterUser extends React.Component {
   };
 
   togglePageCadastro(){
-    
+
+    var dados = this.refs.formRegister.state;
+    // delete dados._senha;
+
+   
+
+    request("Account/Register", "POST", dados)
+      .then(response => response.json())
+      .then(response => {
+         if(response.status != 200)
+          return
+        //console.log(response);
+
+          
+         
+          
+      })
+      .catch(error => {
+        //console.log(error+'asdçkasçldaslkdaslçkdlaskdlaskjdl');
+      })
+
     this.setState({
       pageCadastro: !this.state.pageCadastro
     });
@@ -80,7 +101,7 @@ class ModalRegisterUser extends React.Component {
           open={this.state.open}
           style={styles.modal}
         >
-          <FormRegister/>
+          <FormRegister ref="formRegister" />
         </Dialog>
       </div>
     );

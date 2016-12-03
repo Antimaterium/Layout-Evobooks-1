@@ -8,6 +8,7 @@ import CadastroImagem from './components/CadastroImagem';
 import Editor from './components/Editor';
 import Bibliotecas from './components/Bibliotecas';
 import Profile from './components/Profile';
+import Pesquisa from './components/Pesquisa';
 import TabsProfile from './components/TabsProfile';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -18,6 +19,7 @@ ReactDOM.render(
     <Route path="/" component={Layout}>
       <IndexRoute component={App}/>
       <Route path="imageRegister" component={CadastroImagem}/>
+      <Route path="search" component={Pesquisa}/>
       <Route path="libs" component={Bibliotecas}/>
       <Route path="edit" component={Editor}/>
       <Route path="profile" component={Profile}/>

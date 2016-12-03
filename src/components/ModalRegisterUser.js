@@ -1,7 +1,6 @@
 import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
 import PersonIconAdd from 'material-ui/svg-icons/social/person-add';
 import FormRegister from './FormRegister';
 import {request} from '../utils/Request';
@@ -23,9 +22,9 @@ import {request} from '../utils/Request';
       position: 'relative',
       overflow: 'hidden'
     },
-   button: {
-     color: "#FFF"
-   }
+    button: {
+      color: "#FFF"
+    }
     
   }
 
@@ -53,10 +52,10 @@ class ModalRegisterUser extends React.Component {
     var header = {"Content-Type":"application/json"};
     var body = this.refs.formRegister.state;
 
-    request("POST","Account/Register", header, body)
+    request("Account/Register","POST", header, body)
       .then((response) => {
         console.log(response);
-        if(response.status == 200)
+        if(response.status === 200)
         {
 
         }
@@ -103,7 +102,6 @@ class ModalRegisterUser extends React.Component {
         >
           <FormRegister ref="formRegister" />
         </Dialog>
-        
       </div>
     );
   }

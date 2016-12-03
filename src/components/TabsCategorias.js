@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Tabs, Tab} from 'material-ui/Tabs';
+import React, { Component } from 'react';
+import { Tabs, Tab } from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 import GridListCategoria from './GridListCategoria';
 
@@ -26,11 +26,69 @@ const styles = {
 
 class TabsCategorias extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      slideIndex: 0,
-    };
+  state = {
+    modelos: [],
+    slideIndex: 0
+  }
+
+  requestModelos() {
+    var modelos = [
+            {
+                id:"306fe0ea-1276-4854-b6b6-5e35898ff1ea",
+                Name:"xap",
+                CategoryName:"Outros",
+                CreatorUserName:"Evobooks",
+                Descricao:"xaplaus",
+                thumbPath:"http://lugardaaimgem/dkdlkjd",
+                UploadDate:"2016-12-03T10:45:51.613"
+            },
+            {
+                id:"sdasdasds-1276-4854-b6b6-5e35898ff1ea",
+                Name:"demonio",
+                CategoryName:"Outros",
+                CreatorUserName:"Evobooks",
+                Descricao:"xaplaus",
+                UploadDate:"2016-12-03T10:45:51.613"
+            },
+            {
+                id:"sdasdasds-1276-4854-b6b6-5e35898ff1ea",
+                Name:"baatat",
+                CategoryName:"Outros",
+                CreatorUserName:"Evobooks",
+                Descricao:"xaplaus",
+                UploadDate:"2016-12-03T10:45:51.613"
+            },{
+                id:"sadasdsaddsadsad-1276-4854-b6b6-5e35898ff1ea",
+                Name:"xap",
+                CategoryName:"Outros",
+                CreatorUserName:"Evobooks",
+                Descricao:"xaplaus",
+                UploadDate:"2016-12-03T10:45:51.613"
+            },
+            {
+                id:"sdasdassadsadds-2312132-4854-b6b6-5e35898ff1ea",
+                Name:"demonio",
+                CategoryName:"Outros",
+                CreatorUserName:"Evobooks",
+                Descricao:"xaplaus",
+                UploadDate:"2016-12-03T10:45:51.613"
+            },
+            {
+                id:"sdasdasds-21321-4854-b6b6-5e35898ff1ea",
+                Name:"baatat",
+                CategoryName:"Outros",
+                CreatorUserName:"Evobooks",
+                Descricao:"xaplaus",
+                UploadDate:"2016-12-03T10:45:51.613"
+            }
+        ];
+    this.setState({
+      modelos
+    });
+  }
+
+  componentDidMount(){
+    this.requestModelos();
   }
 
   handleChange = (value) => {
@@ -46,7 +104,7 @@ class TabsCategorias extends Component {
           inkBarStyle={styles.inkBar}
           onChange={this.handleChange}
           value={this.state.slideIndex}
-        >
+          >
           <Tab style={styles.tabs} label="Todos" value={0} />
           <Tab style={styles.tabs} label="Biologia" value={1} />
           <Tab style={styles.tabs} label="Veiculos" value={2} />
@@ -61,36 +119,36 @@ class TabsCategorias extends Component {
         <SwipeableViews
           index={this.state.slideIndex}
           onChangeIndex={this.handleChange}
-        >
+          >
           <div>
-            <GridListCategoria/><br />
+            <GridListCategoria modelos={this.state.modelos} /><br />
           </div>
           <div style={styles.slide}>
-            <GridListCategoria/>
+            <GridListCategoria modelos={this.state.modelos} />
           </div>
           <div style={styles.slide}>
-            <GridListCategoria/>
+            <GridListCategoria modelos={this.state.modelos} />
           </div>
           <div style={styles.slide}>
-            <GridListCategoria/>
+            <GridListCategoria modelos={this.state.modelos} />
           </div>
           <div style={styles.slide}>
-            <GridListCategoria/>
+            <GridListCategoria modelos={this.state.modelos} />
           </div>
           <div style={styles.slide}>
-            <GridListCategoria/>
+            <GridListCategoria modelos={this.state.modelos} />
           </div>
           <div style={styles.slide}>
-            <GridListCategoria/>
+            <GridListCategoria modelos={this.state.modelos} />
           </div>
           <div style={styles.slide}>
-            <GridListCategoria/>
+            <GridListCategoria modelos={this.state.modelos} />
           </div>
           <div style={styles.slide}>
-            <GridListCategoria/>
+            <GridListCategoria modelos={this.state.modelos} />
           </div>
           <div style={styles.slide}>
-            <GridListCategoria/>
+            <GridListCategoria modelos={this.state.modelos} />
           </div>
         </SwipeableViews>
       </div>

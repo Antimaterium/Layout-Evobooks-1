@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import HeaderUserProfile from './HeaderUserProfile';
-import GridListExampleSimple from './GridListExampleSimple';
 import TabsExampleControlled from './TabsExampleControlled';
 import Paper from 'material-ui/Paper';
 

@@ -1,6 +1,5 @@
 import React, { Component} from 'react';
 import { Row, Col } from 'react-grid-system';
-import Paper from 'material-ui/Paper';
 import Image from './Image';
 import '../css/Editor.css';
 

@@ -1,11 +1,19 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 import FlatButton from 'material-ui/FlatButton';
 import SearchSubmit from 'material-ui/svg-icons/action/search';
 import { fullWhite } from 'material-ui/styles/colors';
 import "../css/styles.css";
 
 class Banner extends Component {
-
+	state = {
+		q: ''
+	}
+	handleChangeQuery(ev) {
+		this.setState({
+			q: ev.target.value
+		});
+	}
 	render() {
 
 		const styles = {
@@ -14,11 +22,11 @@ class Banner extends Component {
 				minWidth: '100%',
 				minHeight: '100%',
 			},
-			banner:{
+			banner: {
 				height: "100vh",
 				position: "relative",
 			},
-			bannerTexto:{
+			bannerTexto: {
 				left: 0,
 				top: 0,
 				position: "absolute",
@@ -30,12 +38,12 @@ class Banner extends Component {
 				justifyContent: "center",
 				alignItems: "center",
 				flexDirection: "column",
-                fontFamily: "Oswald",
+				fontFamily: "Oswald",
 				fontWeigth: 'normal',
-                color: "white",
-                textAlign: 'center'
+				color: "white",
+				textAlign: 'center'
 			},
-			bannerVideo:{
+			bannerVideo: {
 				left: 0,
 				top: 0,
 				position: "absolute",
@@ -50,36 +58,38 @@ class Banner extends Component {
 				height: '36px',
 				width: '250px',
 				border: 'none',
-				borderRadius: '2',
+				borderRadius: '2px',
 			}
 		}
 
 		return (
 			<div id="banner" style={styles.banner}>
-                <div className="texto" style={styles.bannerTexto}>
-                    <h1>
-                        A PONTE ENTRE TECNOLOGIA E EDUCAÇÃO
+				<div className="texto" style={styles.bannerTexto}>
+					<h1>
+						A PONTE ENTRE TECNOLOGIA E EDUCAÇÃO
                     </h1>
-                    <p>
-                        Escolha um <strong>modelo 3D</strong>, manipule suas camadas, crie descrições e adicione #comentários
+					<p>
+						Escolha um <strong>modelo 3D</strong>, manipule suas camadas, crie descrições e adicione #comentários
                     </p>
 
-                    <div>
-                        <input style={styles.serchField} type="search" name="searchField" placeholder=" Digite algo. Ex: Célula" />
-                        <FlatButton
-                            backgroundColor="#a4c639"
-                            hoverColor="#8AA62F"
-                            icon={<SearchSubmit color={fullWhite} />}
-                            style={styles.searchSubmit}
-                        />
-                    </div>
-                </div>
+					<div>
+						<input onChange={this.handleChangeQuery.bind(this)} style={styles.serchField} type="search" name="searchField" placeholder=" Digite algo. Ex: Célula" />
+						<Link to={{ pathname: '/search', query: { q: this.state.q } }}>
+							<FlatButton
+								backgroundColor="#a4c639"
+								hoverColor="#8AA62F"
+								icon={<SearchSubmit color={fullWhite} />}
+								style={styles.searchSubmit}
+								/>
+						</Link>
+					</div>
+				</div>
 
-                <div className="background" style={styles.bannerVideo}>
-                    <video style={styles.video} loop="loop" autoPlay="autoplay">
-                        <source src={require("../video/teaser.webm")} />
-                    </video>
-                </div>
+				<div className="background" style={styles.bannerVideo}>
+					<video style={styles.video} loop="loop" autoPlay="autoplay">
+						<source src={require("../video/teaser.webm")} />
+					</video>
+				</div>
 			</div>
 		);
 	}

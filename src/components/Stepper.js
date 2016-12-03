@@ -11,14 +11,6 @@ import InputImage from './InputImage';
 import ViewImage from './ViewImage';
 import '../css/Stepper.css';
 
-const style = {
-  height: '100%',
-  width: '97%',
-  margin: '1%',
-  textAlign: 'center',
-  display: 'inline-block',
-  backgroundColor: '#FAFAFA',
-};
 
 class HorizontalLinearStepper extends React.Component {
 

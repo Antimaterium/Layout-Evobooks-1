@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ChipInput from 'material-ui-chip-input';
+import Chip from 'material-ui/Chip';
 import '../css/Chips.css';
 
 class ChipsInput extends Component{

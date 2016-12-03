@@ -14,17 +14,6 @@ import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import './Profile.css';
 import {request} from "../utils/Request";
 
-const styles = {
-    headline: {
-        fontSize: 24,
-        paddingTop: 16,
-        marginBottom: 12,
-        fontWeight: 400,
-    },
-    slide: {
-        padding: 10,
-    },
-};
 
 class TabsProfile extends Component {
     state = {

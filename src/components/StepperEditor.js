@@ -4,17 +4,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Lista from './Lista';
 import Chips from './Chips';
 import Image from './Image';
-import Paper from 'material-ui/Paper';
 import '../css/Editor.css';
 
-const styles = {
-  height: '100%',
-  width: '97%',
-  margin: '1%',
-  textAlign: 'center',
-  display: 'inline-block',
-  backgroundColor: '#FAFAFA',
-};
 
 class StepperEditor extends Component{
 	render() {

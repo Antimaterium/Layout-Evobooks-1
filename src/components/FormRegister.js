@@ -27,21 +27,21 @@ class FormRegister extends Component {
                     name="Username"
                     hintText="Digite seu nome"
                     floatingLabelText="Nome..."
-                    fullWidth= "true"
+                    fullWidth="true"
                     onChange={this.onChangeHandler.bind(this)}
                 /><br />
                 <TextField
                     name="Email"
                     hintText="Digite seu email"
                     floatingLabelText="Email..."
-                    fullWidth= "true"
+                    fullWidth="true"
                      onChange={this.onChangeHandler.bind(this)}
                 /><br />
                 <TextField
                     name="Password"
                     hintText="Digite sua senha"
                     floatingLabelText="Senha..."
-                    fullWidth= "true"
+                    fullWidth="true"
                      onChange={this.onChangeHandler.bind(this)}
                     errorText=""
                 />
@@ -49,7 +49,7 @@ class FormRegister extends Component {
                     name="ConfirmPassword"
                     hintText="Confirme sua senha"
                     floatingLabelText="Confirmar senha..."
-                    fullWidth= "true"
+                    fullWidth="true"
                      onChange={this.onChangeHandler.bind(this)}
                     errorText="Confirme uma Senha"
                 />

@@ -1,11 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
-import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import ModalLogin from '../components/ModalLogin';
-import ModalRegisterUser from '../components/ModalRegisterUser';
-
 import '../css/layout.css'
 
 const muiTheme = getMuiTheme({
@@ -28,80 +25,56 @@ const styles = {
   logo: {
     width: '190px'
   },
-  containerList: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent:'center',   
-    marginTop: '7px'
-  },
   menuButtons: {
     color: '#FAFAFA',
     fontWeight: 'bold'
   },
-  container: {
-  }
 }
 
 class Layout extends Component {
 
-
-  constructor(props){
-    super(props);
-   
-    // Evento ao rolar o scroll na página
-    window.onscroll=(ev)=>{
-      console.log(ev);
-    }
-
-  }
-
-
   state = {
 
-        estadoAbertura: false,
-        acoesLogin: [],
+    estadoAbertura: false,
+    acoesLogin: [],
 
-      };
-
-
-
-/*  state = {
-    login: false,
-    register: false
   };
 
-  xaplaustos(){
-    this.setState({login: !this.state.login});
-    this.setState({register: !this.state.register});
-  }*/
+
+
+  /*  state = {
+      login: false,
+      register: false
+    };
+  
+    xaplaustos(){
+      this.setState({login: !this.state.login});
+      this.setState({register: !this.state.register});
+    }*/
 
 
 
-  componentDidMount()
-  {
+  componentDidMount() {
 
   }
 
 
   render() {
-    
+
     return (
-      
-		  <MuiThemeProvider muiTheme={muiTheme}>
+
+      <MuiThemeProvider muiTheme={muiTheme}>
         <div style={styles.container}>
           <AppBar
             style={styles.appBar}
             iconElementLeft={(
-                <img style={styles.logo} src={require("../img/EvoLearn-logo.png")}/>
+              <img alt="EvoLearn" style={styles.logo} src={require("../img/EvoLearn-logo.png")} />
             )}
             iconElementRight={(
-              <div style={styles.containerList}>
-                <ModalLogin />
-             
-              </div>
+              <ModalLogin />
             )}
-          />
-          
+            />
+
           <div id="container">
             {this.props.children}
           </div>
@@ -111,8 +84,8 @@ class Layout extends Component {
               <p className="linkCinza">Evobooks - <a className="linkCinza" href="http://evobooks.com.br/cases/">http://evobooks.com.br/cases/</a></p>
             </div>
           </footer>
-        </div>  
-		  </MuiThemeProvider>    
+        </div>
+      </MuiThemeProvider>
     );
   }
 }

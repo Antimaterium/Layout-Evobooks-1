@@ -1,14 +1,10 @@
 const host = "Evolearn.ddns.net:63000";
 var token = "";
 
-export function request(url,method="GET",data){
-    localStorage.getItem(token).length > 0 ? token = localStorage.getItem(token) : null;
+export function request(method="GET",url,headers,data){
     return fetch("http://"+host+"/"+url,{
         method: method,
-        headers:{
-            "Authorization": "Bearer "+token,
-            "Content-Type": "application/json"
-        },
+        headers:headers,
         body: JSON.stringify(data)
     })
 }

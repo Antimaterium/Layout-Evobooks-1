@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import PersonIcon from 'material-ui/svg-icons/social/person';
 import FormLogin from './FormLogin';
 import {request} from '../utils/Request';
-
+import ModalRegisterUser from './ModalRegisterUser';
 
  const styles = {
     modal: {
@@ -31,72 +31,108 @@ import {request} from '../utils/Request';
 class ModalLogin extends React.Component {
   state = {
     open: false,
-    pageRegister: false
+    loged: false
   };
 
-  handleOpen = () => {
-    this.setState({open: true});
-  };
-  
-  handleClose = () => {
-    this.setState({open: false});
-  };
-
-  togglePageRegister(){
-    
+  togglePageRegister = () =>{
     this.setState({
-      pageRegister: !this.state.pageRegister
-    });
+      open: !this.state.open
+    })
+  }
+  ErroDeLogin(response){
+    console.log(response);
+  }
+  Login(){
 
-     var dados = this.refs.formLogin.state;
+    var header = {"Content-Type":"application/json"};
+     var body = this.refs.formLogin.state;
 
-
-     request("Account/Login", "POST", dados)
+    request("POST","Account/Login", header, body)
       .then(response => response.json())
-      .then(response => {
-       localStorage.setItem('token', response.access_token)
-       
-      })
+      .then((response) => {
+        console.log(response.access_token);
+        if(response.access_token != undefined)
+        {
+          console.log(response);
+          localStorage.setItem('token', response.access_token);
+          localStorage.setItem('username', response.userName);
+          this.setState({loged: true});
+          this.togglePageRegister();
+        }
+        else
+        {
+          this.ErroDeLogin(response);
+        }
+      }).catch(error=> {
+        
+      });
+
 
   }
 
+  Logout = () => {
 
+      localStorage.setItem('token', '');    
+      localStorage.setItem('username', '');
+      this.setState({loged: false});
+  }
   render() {
     const actions = [
       <FlatButton
         label="Cancelar"
         primary={true}
-        onTouchTap={this.handleClose}
+        onTouchTap={this.togglePageRegister}
       />,
       <FlatButton
         label="Entrar"
         primary={true}
-        onTouchTap={this.togglePageRegister.bind(this)}
+        onTouchTap={this.Login.bind(this)}
       />,
     ];
 
-
+    if(this.state.loged)
+    {
+      return (
+      <div>
+        <FlatButton 
+          label={"Olá, " + localStorage.getItem('username')}
+          labelPosition="after"
+          style={styles.button}
+          disabled='true'
+        />
+        <FlatButton 
+          icon={<PersonIcon/>} label="Logout"
+          labelPosition="before"
+          style={styles.button}
+          onTouchTap={this.Logout} 
+        />
+      </div>
+    );
+    }
+    else
+    {
     return (
       <div>
         <FlatButton 
           icon={<PersonIcon/>} label="Entrar"
           labelPosition="before"
           style={styles.button}
-          onTouchTap={this.handleOpen} 
+          onTouchTap={this.togglePageRegister} 
           
         />
         <Dialog
-          title="LOGIN"
+          title={this.props.mamao}
           actions={actions}
           modal={true}
           open={this.state.open}
           style={styles.modal}
         >
           <FormLogin ref="formLogin" />
-          <RaisedButton label="CADASTRE-SE" onTouchTap={this.togglePageRegister.bind(this)} />
         </Dialog>
+           <ModalRegisterUser/>
       </div>
     );
+  }
   }
 }
 

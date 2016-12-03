@@ -43,6 +43,7 @@ class FormRegister extends Component {
                     floatingLabelText="Senha..."
                     fullWidth= "true"
                      onChange={this.onChangeHandler.bind(this)}
+                    errorText=""
                 />
                 <TextField
                     name="ConfirmPassword"
@@ -50,6 +51,7 @@ class FormRegister extends Component {
                     floatingLabelText="Confirmar senha..."
                     fullWidth= "true"
                      onChange={this.onChangeHandler.bind(this)}
+                    errorText="Confirme uma Senha"
                 />
             </div>
         )

@@ -30,10 +30,12 @@ import {request} from '../utils/Request';
   }
 
 class ModalRegisterUser extends React.Component {
+
+
   state = {
-    open: false,
-    pageCadastro: false
+    open:false
   };
+
 
   handleOpen = () => {
     this.setState({open: true});
@@ -43,31 +45,28 @@ class ModalRegisterUser extends React.Component {
     this.setState({open: false});
   };
 
-  togglePageCadastro(){
-
-    var dados = this.refs.formRegister.state;
+  Cadastrar(){
+    console.log("HITOU");
+    console.log(this.refs);
     // delete dados._senha;
 
-   
+    var header = {"Content-Type":"application/json"};
+    var body = this.refs.formRegister.state;
 
-    request("Account/Register", "POST", dados)
-      .then(response => response.json())
-      .then(response => {
-         if(response.status != 200)
-          return
-        //console.log(response);
+    request("POST","Account/Register", header, body)
+      .then((response) => {
+        console.log(response);
+        if(response.status == 200)
+        {
 
-          
-         
-          
+        }
+        response.json()
       })
-      .catch(error => {
-        //console.log(error+'asdçkasçldaslkdaslçkdlaskdlaskjdl');
-      })
-
-    this.setState({
-      pageCadastro: !this.state.pageCadastro
-    });
+      .then((response) => {
+      
+      }).catch(error=> {
+        
+      });
   }
 
   render() {
@@ -80,7 +79,7 @@ class ModalRegisterUser extends React.Component {
       <FlatButton
         label="Cadastrar"
         primary={true}
-        onTouchTap={this.togglePageCadastro.bind(this)}
+        onTouchTap={this.Cadastrar.bind(this)}
       />,
     ];
 
@@ -97,12 +96,14 @@ class ModalRegisterUser extends React.Component {
         <Dialog
           title="CADASTRE-SE"
           actions={actions}
-          modal={true}
+          modal={this.state.open}
           open={this.state.open}
           style={styles.modal}
+          ref="EstadoCadastro"
         >
           <FormRegister ref="formRegister" />
         </Dialog>
+        
       </div>
     );
   }

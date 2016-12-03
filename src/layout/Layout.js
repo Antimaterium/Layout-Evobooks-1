@@ -5,6 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import ModalLogin from '../components/ModalLogin';
 import ModalRegisterUser from '../components/ModalRegisterUser';
+
 import '../css/layout.css'
 
 const muiTheme = getMuiTheme({
@@ -42,15 +43,46 @@ const styles = {
 }
 
 class Layout extends Component {
+
+
   constructor(props){
     super(props);
-
+   
     // Evento ao rolar o scroll na página
     window.onscroll=(ev)=>{
       console.log(ev);
     }
 
   }
+
+
+  state = {
+
+        estadoAbertura: false,
+        acoesLogin: [],
+
+      };
+
+
+
+/*  state = {
+    login: false,
+    register: false
+  };
+
+  xaplaustos(){
+    this.setState({login: !this.state.login});
+    this.setState({register: !this.state.register});
+  }*/
+
+
+
+  componentDidMount()
+  {
+
+  }
+
+
   render() {
     
     return (
@@ -64,8 +96,8 @@ class Layout extends Component {
             )}
             iconElementRight={(
               <div style={styles.containerList}>
-                <ModalLogin/>
-                <ModalRegisterUser/>
+                <ModalLogin />
+             
               </div>
             )}
           />

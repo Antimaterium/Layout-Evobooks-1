@@ -24,8 +24,8 @@ class FormLogin extends Component {
             <div>
                 <TextField
                 name="Username"
-                hintText="Digite seu email"
-                floatingLabelText="Email..."
+                hintText="Digite seu nome de usuário"
+                floatingLabelText="Nome de usuário..."
                 onChange={this.onChangeHandler.bind(this)}
                 /><br />
             <TextField

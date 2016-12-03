@@ -5,6 +5,7 @@ export function request(method="GET",url,headers,data){
     return fetch("http://"+host+"/"+url,{
         method: method,
         headers:headers,
+        cache: 'default',
         body: JSON.stringify(data)
     })
 }

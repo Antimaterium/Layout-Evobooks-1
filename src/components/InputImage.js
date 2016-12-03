@@ -18,6 +18,7 @@ const styles = {
 };
 
 class InputImage extends Component{
+
 	render() {
 		return (
 			<div>
@@ -27,7 +28,14 @@ class InputImage extends Component{
      				style={styles.button}
       				containerElement="label"
     >
-      <input type="file" style={styles.exampleImageInput} />
+      <input 
+        type="file" 
+        style={styles.exampleImageInput} 
+        onChange={(e) => {
+            this.setState({image: e.target.files[0]});
+            this.props.onChange(e.target.files[0]);
+          }
+        } />
       </RaisedButton>
 			</div>
 			);

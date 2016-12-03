@@ -31,10 +31,13 @@ state = {
 
 sendFile(){
 
+
+
 var header = {
     "Authorization": "Bearer "+localStorage.getItem("token"),
-    "Content-Type": 'multipart/form-data'
+    "Content-Type": "multipart/form-data"
 }
+
 
 var formData = new FormData();
 
@@ -42,22 +45,33 @@ formData.append('filename', this.refs.image.state.image.name);
 formData.append('description', this.state.description);
 formData.append('tags', 'dawefwea,fawefawefawe,fawe');
 formData.append('categoryId', '06b94ae4-3b63-448c-b27c-ee2a45e9491b');
-formData.append('file', this.refs.image);
+formData.append('file', this.refs.image.state.image);
 
+console.log(this.refs.image);
+ console.log('a');
 
-request("POST","File/Novo", header, formData)
-    .then(response => response.json())
-    .then(response => {
-        console.log(response)
-    })
+  var xhr = new XMLHttpRequest();
+ console.log('b');
 
-    //   request("File/Novo", "POST", header, data)
-    //   .then(response => response.json())
-    //  .then(response => {
+ xhr.open('POST', 'http://localhost:63367/File/Novo');
+ console.log('c');
+ xhr.setRequestHeader('Authorization',`Bearer ${localStorage.getItem('token')}`);
+
+ xhr.send(formData);
+ console.log(formData);
+ console.log('d');
+// request("POST","File/Novo", header, formData)
+//     .then(response => response.json())
+//     .then(response => {
+//         console.log(response)
+//     })
+     // request("File/Novo", "POST", header, formData)
+     //  .then(response => response.json())
+     //  .then(response => {
      //  localStorage.setItem('token', response.access_token)
      //  console.log(response.userName)
-    //   localStorage.setItem('userName', response.userName)
-     // })
+     //   localStorage.setItem('userName', response.userName)
+     //  })
 
         
 }

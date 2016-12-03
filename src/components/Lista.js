@@ -6,6 +6,26 @@ import ItemLista from './ItemLista';
 import '../css/Lista.css';
 
 class Lista extends Component{
+
+	
+
+	listarCamadas(){
+		
+	var header = {
+    "Authorization": "Bearer "+localStorage.getItem("token"),
+	}
+
+//	request("POST","Objects?FileID=39ef3e33-0939-43c5-abde-87db9773bff7", header, formData)
+ //   .then(response => response.json())
+ //   .then(response => {
+ //      console.log(response)
+//  })
+
+
+
+	}
+
+
 	render(){
 		return (
   <List className="container">

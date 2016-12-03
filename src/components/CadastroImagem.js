@@ -31,8 +31,6 @@ state = {
 
 sendFile(){
 
-
-
 var header = {
     "Authorization": "Bearer "+localStorage.getItem("token"),
     "Content-Type": 'multipart/form-data'
@@ -53,8 +51,8 @@ request("POST","File/Novo", header, formData)
         console.log(response)
     })
 
-  //   request("File/Novo", "POST", header, data)
-   //   .then(response => response.json())
+    //   request("File/Novo", "POST", header, data)
+    //   .then(response => response.json())
     //  .then(response => {
      //  localStorage.setItem('token', response.access_token)
      //  console.log(response.userName)

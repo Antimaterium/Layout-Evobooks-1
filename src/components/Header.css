@@ -1,0 +1,17 @@
+.Header{
+	background-color: #038b9c;
+	height: 200px;
+	width: 100%;
+	border: 1px solid #038b9c;
+	
+	
+}
+
+h2 {
+	text-align: center;
+	
+}
+
+.grid-list{
+	 box-shadow: 10px 10px 5px #888888;
+}

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding-top: 50px;
+  margin-bottom:50px;;
   font-family: sans-serif;
 }
 
@@ -11,7 +12,7 @@ body {
 	background: rgb(117, 46, 116);
   padding-top: 35px;
   text-align: center;
-  position: relative;
+  position:relative;
   bottom: 0;
 }
 

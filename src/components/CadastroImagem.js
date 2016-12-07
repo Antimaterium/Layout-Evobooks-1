@@ -53,7 +53,7 @@ console.log(this.refs.image);
   var xhr = new XMLHttpRequest();
  console.log('b');
 
- xhr.open('POST', 'http://localhost:63367/File/Novo');
+ xhr.open('POST', 'File/Novo');
  console.log('c');
  xhr.setRequestHeader('Authorization',`Bearer ${localStorage.getItem('token')}`);
 

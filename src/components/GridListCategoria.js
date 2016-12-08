@@ -34,7 +34,7 @@ const GridListCategoria = ({modelos}) => (
             <CardMedia
               overlay={<CardTitle title={modelo.Name} />}
             >
-              <img alt={modelo.Name} src={modelo.img} style={styles.imagens} />
+              <img alt={modelo.Name} src={modelo.thumbPath} style={styles.imagens} />
             </CardMedia>
             <CardText>
               {modelo.Descricao}

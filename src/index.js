@@ -5,6 +5,7 @@ import Layout from './layout/Layout';
 import './index.css';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import CadastroImagem from './components/CadastroImagem';
+import HomeUser from './components/HomeUser';
 import Editor from './components/Editor';
 import Bibliotecas from './components/Bibliotecas';
 import Profile from './components/Profile';
@@ -24,6 +25,7 @@ ReactDOM.render(
       <Route path="edit" component={Editor}/>
       <Route path="profile" component={Profile}/>
       <Route path="Tabs" component={TabsProfile}/>
+      <Route path="Home" component={HomeUser}/>
     </Route>
   </Router>,
   document.getElementById('root')

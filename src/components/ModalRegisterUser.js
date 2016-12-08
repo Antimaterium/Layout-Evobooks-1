@@ -50,14 +50,14 @@ class ModalRegisterUser extends React.Component {
     // delete dados._senha;
 
     var header = {"Content-Type":"application/json"};
-    var body = this.refs.formRegister.state;
+    var body = JSON.stringify(this.refs.formRegister.state);
 
     request("Account/Register","POST", header, body)
       .then((response) => {
         console.log(response);
         if(response.status === 200)
         {
-
+            this.handleClose();
         }
         response.json()
       })

@@ -2,7 +2,7 @@
 const host = "localhost:63367";
 var token = "";
 
-export function request(method="GET",url,headers,data){
+export function request(url, method="GET",headers,data){
     return fetch("http://"+host+"/"+url,{
         method: method,
         headers:headers,

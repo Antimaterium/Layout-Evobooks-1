@@ -5,6 +5,7 @@ import PersonIcon from 'material-ui/svg-icons/social/person';
 import FormLogin from './FormLogin';
 import { request } from '../utils/Request';
 import ModalRegisterUser from './ModalRegisterUser';
+import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
 const styles = {
   alignHorizontal:{
@@ -37,7 +38,8 @@ const styles = {
 class ModalLogin extends React.Component {
   state = {
     open: false,
-    loged: false
+    loged: false,
+    should: true
   };
 
   togglePageRegister = () => {
@@ -51,7 +53,7 @@ class ModalLogin extends React.Component {
   Login() {
 
     var header = { "Content-Type": "application/json" };
-    var body = this.refs.formLogin.state;
+    var body = JSON.stringify(this.refs.formLogin.state);
 
     request("Account/Login","POST", header, body)
       .then(response => response.json())
@@ -63,6 +65,7 @@ class ModalLogin extends React.Component {
           localStorage.setItem('username', response.userName);
           this.setState({ loged: true });
           this.togglePageRegister();
+            browserHistory.push('/home');
         }
         else {
           this.ErroDeLogin(response);
@@ -79,7 +82,14 @@ class ModalLogin extends React.Component {
     localStorage.setItem('token', '');
     localStorage.setItem('username', '');
     this.setState({ loged: false });
+    browserHistory.push('/');
   }
+
+  VerifyLogin = () => {
+    this.setState({loged: localStorage.getItem('token') != undefined && localStorage.getItem('token') != "" });
+    this.setState({should: false});
+
+  };
   render() {
     const actions = [
       <FlatButton
@@ -93,7 +103,7 @@ class ModalLogin extends React.Component {
         onTouchTap={this.Login.bind(this)}
         />,
     ];
-
+    if(this.state.should) {this.VerifyLogin();}
     if (this.state.loged) {
       return (
         <div>

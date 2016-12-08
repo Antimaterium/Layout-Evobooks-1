@@ -3,6 +3,8 @@ import InputImage from './InputImage';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 import {request} from '../utils/Request';
 
 const styles = {
@@ -26,13 +28,14 @@ const styles = {
 class CadastroImagem extends Component {
 
 state = {
-    imageName: ''
+    imageName: '',
+    categories: []
 }
 
 sendFile(){
 
 
-
+ 
 var header = {
     "Authorization": "Bearer "+localStorage.getItem("token"),
     "Content-Type": "multipart/form-data"
@@ -43,23 +46,18 @@ var formData = new FormData();
 
 formData.append('filename', this.refs.image.state.image.name);
 formData.append('description', this.state.description);
-formData.append('tags', 'dawefwea,fawefawefawe,fawe');
+formData.append('tags', this.state.tags);
 formData.append('categoryId', '06b94ae4-3b63-448c-b27c-ee2a45e9491b');
 formData.append('file', this.refs.image.state.image);
 
-console.log(this.refs.image);
- console.log('a');
-
   var xhr = new XMLHttpRequest();
- console.log('b');
+
 
  xhr.open('POST', 'http://localhost:63367/File/Novo');
- console.log('c');
  xhr.setRequestHeader('Authorization',`Bearer ${localStorage.getItem('token')}`);
 
  xhr.send(formData);
- console.log(formData);
- console.log('d');
+
 // request("POST","File/Novo", header, formData)
 //     .then(response => response.json())
 //     .then(response => {
@@ -76,8 +74,38 @@ console.log(this.refs.image);
         
 }
 
-   
+
+  componentDidMount(){
+     var header = {"Content-Type":"application/json"};
+        var body = {};
+
+       
+console.log("ZsADSASDASDAS");
+
+    request("File/Categories","Get", header, body)
+      .then(response => 
+        response.json()
+      )
+      .then(response => {
+        var arr = response.map((x,i, a)=> {
+            return <MenuItem value={x.Id} key={i} primaryText={x.Name} /> 
+        });
+        console.log("PAssou");
+        console.log(arr);
+         this.setState({categories: arr});
+        //console.log(categories);
+       
+      })
+      .catch(error=> {
+        
+      });
+}
+
+
  render() {
+
+    
+     
       return( 
         <div>
             <Paper 
@@ -106,7 +134,13 @@ console.log(this.refs.image);
                             hintText="Digite uma Descrição"
                             floatingLabelText="Descrição"
                         /><br />
-
+                         <SelectField
+                          value={this.state.value}
+                            onChange={e => this.setState({category: e.target.value})}
+                           maxHeight={500}
+                              >
+                           {this.state.categories}
+                          </SelectField><br/>
                         <div style={styles.buttons}>
                         <RaisedButton 
                             label="Salvar" 

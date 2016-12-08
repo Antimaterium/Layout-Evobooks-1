@@ -1,0 +1,3 @@
+Editor - Melhorar.
+ViewImage - Revisar.
+App - Refazer.

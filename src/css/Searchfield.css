@@ -1,0 +1,17 @@
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: none;
+    font-size: 16px;
+    background-color: #00BCD4;
+    background-image: url('../icons/ic_search_black_24px.svg');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}

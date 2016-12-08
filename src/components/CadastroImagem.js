@@ -53,7 +53,12 @@ formData.append('file', this.refs.image.state.image);
   var xhr = new XMLHttpRequest();
 
 
- xhr.open('POST', 'http://localhost:63367/File/Novo');
+
+ //xhr.open('POST', 'http://localhost:63367/File/Novo'); erro de merge
+
+ xhr.open('POST', 'File/Novo');
+ console.log('c');
+
  xhr.setRequestHeader('Authorization',`Bearer ${localStorage.getItem('token')}`);
 
  xhr.send(formData);

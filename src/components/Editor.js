@@ -2,7 +2,8 @@ import React, { Component} from 'react';
 import { Row, Col} from 'react-grid-system';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
-import Lista from './Lista';
+import ListaCamadas from './ListaCamadas';
+import ListaAnimacoes from './ListaAnimacoes';
 import Chips from './Chips';
 import Image from './Image';
 import '../css/Editor.css';
@@ -20,6 +21,9 @@ const styles = {
 	},
 	editor: {
 		padding: '50px'
+	},
+	footerEditor: {
+		marginTop: '100px;'
 	}
 };
 
@@ -40,7 +44,7 @@ class Editor extends Component{
 										</div>
 									</Col>
 									<Col  md={4} >
-										<Lista titulo="Camadas"/>
+										<ListaCamadas titulo="Camadas"/>
 									</Col>
 								</Row> 
 								<Row> 
@@ -49,13 +53,14 @@ class Editor extends Component{
 										<Chips/>
 									</Col>
 									<Col  md={4} >
-										<Lista titulo="Animações"/>
+										<ListaAnimacoes titulo="Animações"/>
 									</Col>
 								</Row>
 
-								<Row>
+								<Row  className="footerEditor">
 								<Col md={12} >
 										<RaisedButton
+											
 											label="Verificar alterações "
 											labelPosition="before"
 											primary={true}

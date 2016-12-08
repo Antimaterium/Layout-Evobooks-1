@@ -25,8 +25,8 @@ class FormRegister extends Component {
             <div>
                 <TextField
                     name="Username"
-                    hintText="Digite seu nome"
-                    floatingLabelText="Nome..."
+                    hintText="Digite seu nome de usuário"
+                    floatingLabelText="Nome de usuário..."
                     fullWidth="true"
                     onChange={this.onChangeHandler.bind(this)}
                 /><br />

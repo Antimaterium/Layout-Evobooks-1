@@ -3,7 +3,11 @@ import InputImage from './InputImage';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 import {request} from '../utils/Request';
+import {browserHistory} from 'react-router';
+
 
 const styles = {
     paper: {
@@ -26,12 +30,12 @@ const styles = {
 class CadastroImagem extends Component {
 
 state = {
-    imageName: ''
+    imageName: '',
+    categories: []
+
 }
 
 sendFile(){
-
-
 
 var header = {
     "Authorization": "Bearer "+localStorage.getItem("token"),
@@ -40,26 +44,40 @@ var header = {
 
 
 var formData = new FormData();
-
+console.log(this.state.value);
 formData.append('filename', this.refs.image.state.image.name);
 formData.append('description', this.state.description);
-formData.append('tags', 'dawefwea,fawefawefawe,fawe');
-formData.append('categoryId', '06b94ae4-3b63-448c-b27c-ee2a45e9491b');
+formData.append('tags', this.state.tags);
+formData.append('categoryId', this.state.value);
 formData.append('file', this.refs.image.state.image);
 
-console.log(this.refs.image);
- console.log('a');
-
+console.log(formData);
   var xhr = new XMLHttpRequest();
- console.log('b');
 
- xhr.open('POST', 'http://localhost:63367/File/Novo');
+
+ xhr.onreadystatechange = function() {
+    if (xhr.readyState == XMLHttpRequest.DONE) {
+        if(xhr.status == 200){
+            alert("A imagem foi cadastrada na sua biblioteca!");
+               browserHistory.push('/home');
+        }
+        else{
+            console.log(xhr);
+            alert("Houve um erro durante o cadastro da imagem - Seu arquivo FBX deve estar no formato ASCII e deve ser válido");
+            
+        }
+    }
+}
+ xhr.open('POST', 'http://localhost:63367/File/Novo'); 
+
+ //xhr.open('POST', 'File/Novo');
  console.log('c');
+
  xhr.setRequestHeader('Authorization',`Bearer ${localStorage.getItem('token')}`);
 
  xhr.send(formData);
- console.log(formData);
- console.log('d');
+   
+
 // request("POST","File/Novo", header, formData)
 //     .then(response => response.json())
 //     .then(response => {
@@ -76,7 +94,34 @@ console.log(this.refs.image);
         
 }
 
-   
+  componentDidMount(){
+     var header = {"Content-Type":"application/json"};
+        var body = {};
+
+
+    request("File/Categories","Get", header, body)
+      .then(response => 
+        response.json()
+      )
+      .then(response => {
+        var arr = response.map((x,i, a)=> {
+            return <MenuItem value={x.Id} key={i} primaryText={x.Name} /> 
+        });
+        console.log("Passou");
+        console.log(arr);
+         this.setState({categories: arr});
+        //console.log(categories);
+       
+      })
+      .catch(error=> {
+        
+      });
+}
+
+handleChange = (event, index, value) => {
+    this.setState({value});
+    console.log(this.state.value);
+  };
  render() {
       return( 
         <div>
@@ -106,7 +151,27 @@ console.log(this.refs.image);
                             hintText="Digite uma Descrição"
                             floatingLabelText="Descrição"
                         /><br />
+                         
+                         
+                        <SelectField
+                            floatingLabelText="Categoria"
+                            value={this.state.value}
+                            onChange={this.handleChange}
+                            maxHeight={200}
+                            >
+                            {this.state.categories}
+                        </SelectField>
+                        <br />
 
+                            <TextField
+                            onChange={e => this.setState({tags: e.target.value})}
+                            name="tags"
+                            style={{width: '30%'}}
+                            hintText="Digite tags (Ex:tag1,tag2)"
+                            floatingLabelText="Tags"
+                        />
+                        <br />
+                        
                         <div style={styles.buttons}>
                         <RaisedButton 
                             label="Salvar" 

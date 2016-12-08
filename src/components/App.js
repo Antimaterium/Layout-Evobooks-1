@@ -11,8 +11,7 @@ class App extends Component {
 			<div>
 				<Banner />
 				<IconsDescription/>				
-						
-				
+				<PaperBackground />				
 			</div>
 		);
 	}

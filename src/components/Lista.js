@@ -48,8 +48,7 @@ class Lista extends Component {
 	}
 }
 
-Lista.propTypes = {	titulo: PropTypes.string.isRequired	
-}
+Lista.propTypes = {	titulo: PropTypes.string.isRequired}
 
 
 export default Lista;

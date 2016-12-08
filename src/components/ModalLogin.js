@@ -8,6 +8,7 @@ import ModalRegisterUser from './ModalRegisterUser';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import ModalAlterarSenha from '../components/ModalAlterarSenha';
 
+
 const styles = {
   alignHorizontal:{
     display: "flex"
@@ -81,6 +82,14 @@ class ModalLogin extends React.Component {
 
   }
 
+  
+  novaImagem = () =>{
+      browserHistory.push('/imageRegister');
+  }
+  home = () =>{
+      browserHistory.push('/home');
+  }
+
   Logout = () => {
 
     localStorage.setItem('token', '');
@@ -94,6 +103,7 @@ class ModalLogin extends React.Component {
     this.setState({should: false});
 
   };
+
   render() {
     const actions = [
       <FlatButton
@@ -110,19 +120,33 @@ class ModalLogin extends React.Component {
     if(this.state.should) {this.VerifyLogin();}
     if (this.state.loged) {
       return (
+
         <div style={styles.rigthButtons}>
-          <FlatButton
+
+            <FlatButton
             label={"Olá, " + localStorage.getItem('username')}
             labelPosition="after"
             style={styles.button}
             disabled='true'
             />
+            <FlatButton
+            label="Home"
+            labelPosition="before"
+            style={styles.button}
+            onTouchTap={this.home}/> 
+            <FlatButton
+             label="Cadastrar nova imagem"
+            labelPosition="before"
+            style={styles.button}
+            onTouchTap={this.novaImagem}/> 
+
           <FlatButton
             icon={<PersonIcon />} label="Logout"
             labelPosition="before"
             style={styles.button}
             onTouchTap={this.Logout}
             />
+
           <ModalAlterarSenha/>
         </div>
       );

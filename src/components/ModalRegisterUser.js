@@ -58,6 +58,8 @@ class ModalRegisterUser extends React.Component {
         if(response.status === 200)
         {
 
+          this.handleClose();
+
         }
         response.json()
       })

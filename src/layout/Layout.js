@@ -3,6 +3,7 @@ import AppBar from 'material-ui/AppBar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import ModalLogin from '../components/ModalLogin';
+import ModalRecuperacaoSenha from '../components/ModalRecuperacaoSenha';
 
 import '../css/layout.css'
 
@@ -30,6 +31,10 @@ const styles = {
     color: '#FAFAFA',
     fontWeight: 'bold'
   },
+  rigthButtons: {
+    display:    'flex',
+    alignItems: 'center'
+  }
 }
 
 class Layout extends Component {
@@ -72,7 +77,12 @@ class Layout extends Component {
               <img alt="EvoLearn" style={styles.logo} src={require("../img/EvoLearn-logo.png")} />
             )}
             iconElementRight={(
-              <ModalLogin />
+              
+              <div style={styles.rigthButtons}>
+                <ModalRecuperacaoSenha/>
+                <ModalLogin />
+              </div>
+              
             )}
             />
 

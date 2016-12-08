@@ -6,6 +6,7 @@ import FormLogin from './FormLogin';
 import { request } from '../utils/Request';
 import ModalRegisterUser from './ModalRegisterUser';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import ModalAlterarSenha from '../components/ModalAlterarSenha';
 
 const styles = {
   alignHorizontal:{
@@ -32,6 +33,10 @@ const styles = {
   wrapModal: {
     display: 'flex',
     flexDirecition: 'row'
+  },
+  rigthButtons: {
+    display:    'flex',
+    alignItems: 'center'
   }
 }
 
@@ -74,7 +79,6 @@ class ModalLogin extends React.Component {
 
       });
 
-
   }
 
   Logout = () => {
@@ -106,7 +110,7 @@ class ModalLogin extends React.Component {
     if(this.state.should) {this.VerifyLogin();}
     if (this.state.loged) {
       return (
-        <div>
+        <div style={styles.rigthButtons}>
           <FlatButton
             label={"Olá, " + localStorage.getItem('username')}
             labelPosition="after"
@@ -119,6 +123,7 @@ class ModalLogin extends React.Component {
             style={styles.button}
             onTouchTap={this.Logout}
             />
+          <ModalAlterarSenha/>
         </div>
       );
     }

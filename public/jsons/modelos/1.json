@@ -1,0 +1,66 @@
+{
+    "id": 1,
+    "url_3d": "e2446da0e87246b19dfe2f3efdd45b73",
+    "nome": "Meu 3D loko",
+    "tags": [
+        {
+            "id": 1,
+            "nome": "Tag1"
+        },
+        {
+            "id": 2,
+            "nome": "Tag2"
+        },
+        {
+            "id": 3,
+            "nome": "Tag3"
+        }
+    ],
+    "animacoes": [
+        {
+            "id": "e40628f66a97474c9ba4fcdffcf5241c",
+            "habilitado": true,
+            "nome": "animacao1",
+            "continua": true
+        },
+        {
+            "id": "e2446da0e87246b19dfe2f3efdd45b73",
+            "habilitado": true,
+            "nome": "animacao1",
+            "continua": true
+        },
+        {
+            "id": "e2446da0e87246b19dfe2f3efdd45b73",
+            "habilitado": true,
+            "nome": "animacao1",
+            "continua": true
+        }
+    ],
+    "camadas": [
+        {
+            "id": "e40628f66a97474c9ba4fcdffcf5241c",
+            "habilitado": true,
+            "nome": "camada1"
+        },
+        {
+            "id": "e2446da0e87246b19dfe2f3efdd45b73",
+            "habilitado": true,
+            "nome": "camada1 + camada2"
+        },
+        {
+            "id": "e2446da0e87246b19dfe2f3efdd45b73",
+            "habilitado": true,
+            "nome": "camada2"
+        },
+        {
+            "id": "e2446da0e87246b19dfe2f3efdd45b73",
+            "habilitado": true,
+            "nome": "camada3 + camada2 + camada1"
+        },
+        {
+            "id": "e2446da0e87246b19dfe2f3efdd45b73",
+            "habilitado": true,
+            "nome": "camada1"
+        }
+    ]
+}

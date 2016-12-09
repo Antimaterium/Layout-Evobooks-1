@@ -3,11 +3,8 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 import GridListCategoria from './GridListCategoria';
 import { request } from '../utils/Request';
-<<<<<<< HEAD
 import {browserHistory} from 'react-router';
-=======
-import { browserHistory } from 'react-router';
->>>>>>> dev
+
 
 const styles = {
   headline: {

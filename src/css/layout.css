@@ -1,11 +1,7 @@
 body {
   margin: 0;
   padding-top: 50px;
-<<<<<<< HEAD
   margin-bottom:50px;;
-=======
-  margin-bottom:50px;
->>>>>>> 3cf75bafabda5e9e02b75d91618cae1429960f65
   font-family: sans-serif;
 }
 
@@ -16,11 +12,7 @@ body {
 	background: rgb(117, 46, 116);
   padding-top: 35px;
   text-align: center;
-<<<<<<< HEAD
   position:relative;
-=======
-  position: relative;
->>>>>>> 3cf75bafabda5e9e02b75d91618cae1429960f65
   bottom: 0;
 }
 

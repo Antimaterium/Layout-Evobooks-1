@@ -40,13 +40,11 @@ const GridListCategoria = ({modelos}) => (
               {modelo.Descricao}
             </CardText>
             <CardActions>
-              <FlatButton label="Editar" />
               <FlatButton label="Visualizar" 
               onTouchTap={function(){
                 browserHistory.push("/edit/1");
               }}
               />
-
             </CardActions>
         </Card>
       ))}

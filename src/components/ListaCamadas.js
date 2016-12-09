@@ -15,13 +15,7 @@ class Lista extends Component {
 			<div>
 				<List>
 					{ this.props.data.map(camada => {
-
-						return 
-						 <ListItem onClick={this.onClick.bind(this,camada)
-          				leftCheckbox={<Checkbox checked={camada.habilitado}/>}
-          				primaryText={camada.nome}
-          
-        				/>
+						return <ListItem onClick={this.onClick.bind(this,camada)} primaryText={camada.nome}/>
 						}) 
 					}
 				</List>	  

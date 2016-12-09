@@ -79,24 +79,14 @@ class ModalLogin extends React.Component {
       }).catch(error => {
 
       });
-<<<<<<< HEAD
-  }
-=======
-
   }
 
-  
->>>>>>> 3cf75bafabda5e9e02b75d91618cae1429960f65
   novaImagem = () =>{
       browserHistory.push('/imageRegister');
   }
   home = () =>{
       browserHistory.push('/home');
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> 3cf75bafabda5e9e02b75d91618cae1429960f65
   Logout = () => {
 
     localStorage.setItem('token', '');
@@ -129,12 +119,7 @@ class ModalLogin extends React.Component {
       return (
 
         <div style={styles.rigthButtons}>
-
-<<<<<<< HEAD
-          <FlatButton
-=======
             <FlatButton
->>>>>>> 3cf75bafabda5e9e02b75d91618cae1429960f65
             label={"Olá, " + localStorage.getItem('username')}
             labelPosition="after"
             style={styles.button}
@@ -150,10 +135,6 @@ class ModalLogin extends React.Component {
             labelPosition="before"
             style={styles.button}
             onTouchTap={this.novaImagem}/> 
-<<<<<<< HEAD
-=======
-
->>>>>>> 3cf75bafabda5e9e02b75d91618cae1429960f65
           <FlatButton
             icon={<PersonIcon />} label="Logout"
             labelPosition="before"
@@ -162,11 +143,6 @@ class ModalLogin extends React.Component {
             />
 
           <ModalAlterarSenha/>
-<<<<<<< HEAD
-
-            
-=======
->>>>>>> 3cf75bafabda5e9e02b75d91618cae1429960f65
         </div>
       );
     }

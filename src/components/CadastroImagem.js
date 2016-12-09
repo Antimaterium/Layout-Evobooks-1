@@ -36,10 +36,6 @@ state = {
 }
 
 sendFile(){
-<<<<<<< HEAD
-=======
-
->>>>>>> 3cf75bafabda5e9e02b75d91618cae1429960f65
 var header = {
     "Authorization": "Bearer "+localStorage.getItem("token"),
     "Content-Type": "multipart/form-data"
@@ -97,10 +93,6 @@ console.log(formData);
         
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 3cf75bafabda5e9e02b75d91618cae1429960f65
   componentDidMount(){
      var header = {"Content-Type":"application/json"};
         var body = {};
@@ -158,11 +150,6 @@ handleChange = (event, index, value) => {
                             hintText="Digite uma Descrição"
                             floatingLabelText="Descrição"
                         /><br />
-<<<<<<< HEAD
-                        
-=======
-                         
->>>>>>> 3cf75bafabda5e9e02b75d91618cae1429960f65
                          
                         <SelectField
                             floatingLabelText="Categoria"

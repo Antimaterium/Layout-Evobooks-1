@@ -3,16 +3,8 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 import GridListCategoria from './GridListCategoria';
 import { request } from '../utils/Request';
-<<<<<<< HEAD
 import { browserHistory } from 'react-router';
 
-=======
-<<<<<<< HEAD
-import {browserHistory} from 'react-router';
-=======
-import { browserHistory } from 'react-router';
->>>>>>> dev
->>>>>>> 3cf75bafabda5e9e02b75d91618cae1429960f65
 
 const styles = {
   headline: {
@@ -96,10 +88,6 @@ class TabsCategorias extends Component {
           slideIndex: value
         });
       });
-<<<<<<< HEAD
-=======
-
->>>>>>> 3cf75bafabda5e9e02b75d91618cae1429960f65
   };
 
   render() {

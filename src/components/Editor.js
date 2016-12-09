@@ -11,10 +11,6 @@ import '../css/Editor.css';
 import { request } from '../utils/Request';
 
 //import SketchFab from "../utils/SketchFab";
-<<<<<<< HEAD
-
-=======
->>>>>>> 3cf75bafabda5e9e02b75d91618cae1429960f65
 
 const styles = {
 	paper: {
@@ -58,19 +54,9 @@ class Editor extends Component {
 		});
 	}
 	onCamadaChange(camada){
-
-
-		camada.habilitado = !camada.habilitado
-
-		var url_3d = GetUrl3d( this.state.modelo.camadas);
-		this.setState({url_3d});
-	}
-
-	GetUrl3d(camadas){
-		if(camadas[0].habilitado && camadas[1].habilitado && camadas[2].habilitado && camadas[3].habilitado)
-		{
-			
-		}
+		this.setState({
+			url_3d: camada.id
+		});
 	}
 
 	renderModelo() {

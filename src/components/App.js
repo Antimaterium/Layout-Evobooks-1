@@ -10,7 +10,8 @@ class App extends Component {
 		return (
 			<div>
 				<Banner />
-				<IconsDescription/>				
+				<IconsDescription/>	
+							
 				<PaperBackground />				
 			</div>
 		);
